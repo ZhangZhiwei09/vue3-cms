@@ -20,8 +20,9 @@ if (process.env.NODE_ENV === 'development') {
   BASE_URL = '/api'
 } else if (process.env.NODE_ENV === 'production') {
   BASE_URL = 'http://coderwhy.org/prod'
+} else if (process.env.NODE_ENV === 'mock') {
+  BASE_URL = 'mock'
 } else {
   BASE_URL = 'http://coderwhy.org/test'
 }
-
 export { BASE_URL, TIME_OUT }

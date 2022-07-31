@@ -6,6 +6,8 @@ import {
   requestUserInfoById,
   requestUserMenusByRoleId
 } from '@/service/login/login'
+import { test } from '@/service/test'
+
 import router from '@/router'
 import localCache from '@/utils/cache'
 const loginStore: Module<ILoginState, IRootState> = {
@@ -45,6 +47,8 @@ const loginStore: Module<ILoginState, IRootState> = {
   },
   actions: {
     async LoginAction({ commit, dispatch }, payload) {
+      const result = await test()
+      console.log(result)
       const loginResult = await accountLoginRequest(payload)
 
       const { id, token } = loginResult.data

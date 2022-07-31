@@ -1,6 +1,6 @@
 # 项目收获总结~
 
-## 模块化vuex
+## 模块化 vuex
 
 ```
 import { Module } from 'vuex'
@@ -11,9 +11,9 @@ const loginModule:Module<S，R>{
 }
 ```
 
-## 解决vuex刷新丢失数据的方法
+## 解决 vuex 刷新丢失数据的方法
 
-在main入口函数调用store的方法，该方法将检查localstorage的数据执行
+在 main 入口函数调用 store 的方法，该方法将检查 localstorage 的数据执行
 
 ```js
 import { setupStore } from './store'
@@ -44,29 +44,29 @@ export function setupStore() {
     }
 ```
 
-## 双向绑定:避免单向数据流，不应该更改父组件传递过来的数据，而是子组件传递信息给父组件，让父组件修改数据
+## 双向绑定:为避免单向数据流，不应该更改父组件传递过来的数据，而是子组件传递信息给父组件，让父组件修改数据
 
 ```js
-const formData = ref({ ...props.modelValue })//将传递过来的数据浅拷贝一份，而不是直接修改传递过来的数据
+const formData = ref({ ...props.modelValue }) //将传递过来的数据浅拷贝一份，而不是直接修改传递过来的数据
 
-  watch(
-     formData,
-      (newValue) => {
-      emit('update:modelValue', newValue)
-     },
+watch(
+  formData,
+  (newValue) => {
+    emit('update:modelValue', newValue)
+  },
   {
-        deep: true
-   }
- )
+    deep: true
+  }
+)
 ```
 
-##  模块化的store如何调用根store下的方法？
+## 模块化的 store 如何调用根 store 下的方法？
 
 ```js
 dispatch('getInitialDataAction', null, { root: true })
 ```
 
-## 封装分页组件:数据总数（dataCount)传给子组件，通过v-model:page='pageInfo'双向绑定子组件属性
+## 封装分页组件:数据总数（dataCount)传给子组件，通过 v-model:page='pageInfo'双向绑定子组件属性
 
 ```js
 //父组件
@@ -137,9 +137,9 @@ export default defineComponent({
  
 ```
 
-## props接受列表数据循环时，循环的item显示对象的类型为unknown
+## props 接受列表数据循环时，循环的 item 显示对象的类型为 unknown
 
-解决方法：因为Array中可以放任何数据类型，所以要告知数据中各子项的数据类型
+解决方法：因为 Array 中可以放任何数据类型，所以要告知数据中各子项的数据类型
 
 ```js
 import { defineComponent, PropType } from 'vue'

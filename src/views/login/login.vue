@@ -30,6 +30,7 @@ import { reactive, ref } from 'vue'
 import { rules } from '@/config/account-config'
 import { useStore } from 'vuex'
 import type { FormInstance } from 'element-plus'
+import { test } from '@/service/test'
 export default defineComponent({
   setup() {
     const accountRef = ref<FormInstance>()
@@ -40,14 +41,12 @@ export default defineComponent({
       name: 'coderwhy',
       password: '123456'
     })
-
     const login = () => {
       accountRef.value?.validate((valid) => {
         if (valid) {
-          console.log('123')
+          store.dispatch('loginStore/LoginAction', { ...account })
         }
       })
-      store.dispatch('loginStore/LoginAction', { ...account })
     }
     return {
       accountRef,
