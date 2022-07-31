@@ -60,7 +60,7 @@ const formData = ref({ ...props.modelValue })//将传递过来的数据浅拷贝
  )
 ```
 
-## ## 模块化的store如何调用根store下的方法？
+##  模块化的store如何调用根store下的方法？
 
 ```js
 dispatch('getInitialDataAction', null, { root: true })
