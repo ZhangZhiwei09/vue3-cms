@@ -9,9 +9,10 @@ export function getPageListData(url: string, queryInfo: any) {
   })
 }
 
-export function deletePageData(url: string) {
+export function deletePageData(url: string, id: number) {
   return request.delete<IDataType>({
-    url: url
+    url: url,
+    data: id
   })
 }
 

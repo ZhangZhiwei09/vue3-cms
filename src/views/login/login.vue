@@ -30,7 +30,6 @@ import { reactive, ref } from 'vue'
 import { rules } from '@/config/account-config'
 import { useStore } from 'vuex'
 import type { FormInstance } from 'element-plus'
-import { test } from '@/service/test'
 export default defineComponent({
   setup() {
     const accountRef = ref<FormInstance>()

@@ -1,12 +1,18 @@
 import { Module } from 'vuex'
 import { IRootState } from '../type/index'
 import { ISystemState } from '../type/system'
+// import {
+//   getPageListData,
+//   deletePageData,
+//   createPageData,
+//   editPageData
+// } from '@/service/main/system/system'
 import {
   getPageListData,
   deletePageData,
   createPageData,
   editPageData
-} from '@/service/main/system/system'
+} from '@/mockhttp/main/system/system'
 const systemStore: Module<ISystemState, IRootState> = {
   namespaced: true,
   state() {
@@ -76,9 +82,10 @@ const systemStore: Module<ISystemState, IRootState> = {
     },
     async deleteUserAction({ dispatch }, payload: any) {
       const { pageName, id } = payload
-      const pageUrl = `/${pageName}/${id}`
 
-      await deletePageData(pageUrl)
+      // const pageUrl = `/${pageName}/${id}`
+
+      await deletePageData(pageName, id)
       //删除完再重新请求数据
       dispatch('getPageListAction', {
         pageName,
@@ -106,9 +113,12 @@ const systemStore: Module<ISystemState, IRootState> = {
     async editPageDataAction({ dispatch }, payload: any) {
       // 1.编辑数据的请求
       const { pageName, editData, id } = payload
-      console.log(editData)
+      console.log(payload)
       const pageUrl = `/${pageName}/${id}`
-      await editPageData(pageUrl, editData)
+      await editPageData(pageUrl, {
+        editData,
+        id
+      })
 
       // 2.请求最新的数据
       dispatch('getPageListAction', {

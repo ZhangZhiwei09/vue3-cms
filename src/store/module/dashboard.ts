@@ -1,12 +1,17 @@
 import { Module } from 'vuex'
 
+// import {
+//   getCategoryGoodsCount,
+//   getCategoryGoodsSale,
+//   getCategoryGoodsFavor,
+//   getAddressGoodsSale
+// } from '@/service/main/analysis/dashboard'
 import {
   getCategoryGoodsCount,
   getCategoryGoodsSale,
   getCategoryGoodsFavor,
   getAddressGoodsSale
-} from '@/service/main/analysis/dashboard'
-
+} from '@/mockhttp/main/analysis/dashboard'
 import { IDashboardState } from '../type/analysis'
 import { IRootState } from '../type/index'
 
