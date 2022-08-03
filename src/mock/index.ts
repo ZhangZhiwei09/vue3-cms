@@ -21,7 +21,6 @@ export interface MockParams {
 
 export function mockXHR() {
   let i: MockParams
-  console.log(mocks)
   for (i of mocks) {
     Mock.mock(new RegExp(i.url), i.type || 'get', i.response)
   }

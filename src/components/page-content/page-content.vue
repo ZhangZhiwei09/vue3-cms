@@ -79,12 +79,14 @@ export default defineComponent({
     watch(pageInfo, () => getPageData())
     //获取数据
     const getPageData = (queryInfo: any = {}) => {
+      console.log(queryInfo)
+
       store.dispatch('systemStore/getPageListAction', {
         pageName: props.pageName,
         queryInfo: {
           offset: (pageInfo.value.currentPage - 1) * pageInfo.value.pageSize,
           size: pageInfo.value.pageSize,
-          ...queryInfo
+          queryInfo
         }
       })
     }

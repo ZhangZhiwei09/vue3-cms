@@ -137,9 +137,25 @@ const usersListData = {
   ],
   totalCount: 10
 }
+const test = {
+  list: [
+    {
+      id: 177032390,
+      name: 'test',
+      realname: 'test',
+      cellphone: 13975654657,
+      enable: 1,
+      departmentId: 3,
+      roleId: 1,
+      createAt: '2022-08-01T07:24:12.000Z',
+      updateAt: '2022-08-01T07:24:12.000Z'
+    }
+  ]
+}
 export default [
-  //查询用户     /users/id
-  //查询用户列表 /users/list post查询 delete删除 patch编辑
+  //查询用户      /users/id  get
+  //创建用户      /users      post
+  //查询用户列表  /users/list  post查询 delete删除 patch编辑
   {
     url: '/mock/users/1',
     type: 'get',
@@ -150,12 +166,28 @@ export default [
       }
     }
   },
+
   {
     url: '/mock/users/list',
     type: 'post',
-    response: () => {
+    response: (option: any) => {
+      console.log(JSON.parse(option.body))
+
+      const data = JSON.parse(option.body)
+
+      const queryInfo = data.queryInfo
+
+      if (!(Object.keys(queryInfo).length === 0)) {
+        console.log('执行查找')
+        const lists = usersListData.list
+        const searchkeys = Object.keys(queryInfo)
+        const searchResult = lists.filter((item) => searchkeys.find((k) => item[k] == queryInfo[k]))
+        console.log(searchResult)
+
+        usersListData.list = searchResult
+      }
       return {
-        code: 0,
+        code: 200,
         data: usersListData
       }
     }
@@ -187,6 +219,24 @@ export default [
       }
       return {
         code: 0,
+        data: usersListData
+      }
+    }
+  },
+  {
+    url: '/mock/users',
+    type: 'post',
+    response: (option: any) => {
+      const id = Math.floor(Math.random() * 90 + 10)
+      const newPageData = JSON.parse(option.body)
+      const newUserData = {
+        id: id,
+        ...newPageData
+      }
+      usersListData.list.push(newUserData)
+      usersListData.totalCount++
+      return {
+        code: 200,
         data: usersListData
       }
     }

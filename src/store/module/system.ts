@@ -67,6 +67,8 @@ const systemStore: Module<ISystemState, IRootState> = {
   },
   actions: {
     async getPageListAction({ commit }, payload: any) {
+      console.log(payload)
+
       // 1.获取pageUrl
       const pageName = payload.pageName
       const pageUrl = `/${pageName}/list`
@@ -96,9 +98,11 @@ const systemStore: Module<ISystemState, IRootState> = {
       })
     },
     async createPageDataAction({ dispatch }, payload: any) {
-      // 1.创建数据的请求
+      //创建数据的请求
       const { pageName, newData } = payload
       const pageUrl = `/${pageName}`
+      console.log(newData)
+
       await createPageData(pageUrl, newData)
 
       // 2.请求最新的数据

@@ -9,6 +9,8 @@ export function usePageSearch(): any {
   }
   //查询按钮
   const handleQueryClick = (queryInfo: any) => {
+    console.log(queryInfo)
+
     pageContentRef.value?.getPageData(queryInfo)
   }
   return [pageContentRef, handleResetClick, handleQueryClick]
