@@ -1,5 +1,4 @@
 export default [
-  // GetUserInfo
   {
     url: '/mock/department/list',
     type: 'post',

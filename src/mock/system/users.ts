@@ -137,21 +137,7 @@ const usersListData = {
   ],
   totalCount: 10
 }
-const test = {
-  list: [
-    {
-      id: 177032390,
-      name: 'test',
-      realname: 'test',
-      cellphone: 13975654657,
-      enable: 1,
-      departmentId: 3,
-      roleId: 1,
-      createAt: '2022-08-01T07:24:12.000Z',
-      updateAt: '2022-08-01T07:24:12.000Z'
-    }
-  ]
-}
+
 export default [
   //查询用户      /users/id  get
   //创建用户      /users      post
@@ -171,24 +157,26 @@ export default [
     url: '/mock/users/list',
     type: 'post',
     response: (option: any) => {
-      console.log(JSON.parse(option.body))
-
       const data = JSON.parse(option.body)
-
       const queryInfo = data.queryInfo
-
-      if (!(Object.keys(queryInfo).length === 0)) {
-        console.log('执行查找')
-        const lists = usersListData.list
+      // 有查询条件并且查询条件不为空{}
+      if (queryInfo && JSON.stringify(queryInfo) !== '{}') {
+        const cloneData = { ...usersListData }
+        const lists = cloneData.list
         const searchkeys = Object.keys(queryInfo)
         const searchResult = lists.filter((item) => searchkeys.find((k) => item[k] == queryInfo[k]))
-        console.log(searchResult)
-
-        usersListData.list = searchResult
-      }
-      return {
-        code: 200,
-        data: usersListData
+        cloneData.list = searchResult
+        return {
+          code: 200,
+          message: '查询',
+          data: cloneData
+        }
+      } else {
+        return {
+          code: 200,
+          message: '重置',
+          data: usersListData
+        }
       }
     }
   },
@@ -197,9 +185,9 @@ export default [
     type: 'delete',
     response: (option: any) => {
       const deleteId = option.body
-      usersListData.list.forEach((e, i) => {
-        if (e.id === deleteId) {
-          usersListData.list.splice(i, 1)
+      usersListData.list.forEach((item, index) => {
+        if (item.id === deleteId) {
+          usersListData.list.splice(index, 1)
         }
       })
       return {

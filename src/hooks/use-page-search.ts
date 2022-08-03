@@ -9,9 +9,12 @@ export function usePageSearch(): any {
   }
   //查询按钮
   const handleQueryClick = (queryInfo: any) => {
+    Object.keys(queryInfo).forEach((e) => {
+      if ((queryInfo[e] ?? '') !== '') {
+        pageContentRef.value?.getPageData(queryInfo)
+      }
+    })
     console.log(queryInfo)
-
-    pageContentRef.value?.getPageData(queryInfo)
   }
   return [pageContentRef, handleResetClick, handleQueryClick]
 }

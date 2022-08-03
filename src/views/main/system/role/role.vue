@@ -46,6 +46,7 @@ export default defineComponent({
     const treeRef = ref<InstanceType<typeof ElTree>>()
     const editCallback = (item: any) => {
       const leafKeys = menuMapLeafKeys(item.menuList)
+
       nextTick(() => {
         treeRef.value?.setCheckedKeys(leafKeys, false)
       })

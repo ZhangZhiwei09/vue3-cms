@@ -75,6 +75,7 @@ const systemStore: Module<ISystemState, IRootState> = {
 
       // 2.对页面发送请求
       const pageResult = await getPageListData(pageUrl, payload.queryInfo)
+      console.log(pageResult)
 
       const { list, totalCount } = pageResult.data
 
