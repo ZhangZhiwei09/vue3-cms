@@ -63,7 +63,6 @@ export default defineComponent({
       const checkedKeys = data2.checkedKeys
       const halfCheckedKeys = data2.halfCheckedKeys
       const menuList = [...checkedKeys, ...halfCheckedKeys]
-
       otherInfo.value = { menuList }
     }
     return {

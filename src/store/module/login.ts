@@ -1,6 +1,7 @@
 import { Module } from 'vuex'
 import { ILoginState } from '../type/login'
 import { IRootState } from '../type/index'
+import { mapMenusToRoutes } from '@/utils/map-menu'
 // import {
 //   accountLoginRequest,
 //   requestUserInfoById,
@@ -36,13 +37,15 @@ const loginStore: Module<ILoginState, IRootState> = {
 
       // console.log('注册动态路由')
 
+      console.log(userMenus)
+
       // userMenus => routes
-      // const routes = mapMenusToRoutes(userMenus)
+      const routes = mapMenusToRoutes(userMenus)
 
       // 将routes => router.main.children
-      // routes.forEach((route) => {
-      //   router.addRoute('main', route)
-      // })
+      routes.forEach((route) => {
+        router.addRoute('main', route)
+      })
 
       // 获取用户按钮的权限
       // const permissions = mapMenusToPermissions(userMenus)
@@ -60,8 +63,12 @@ const loginStore: Module<ILoginState, IRootState> = {
       // 发送初始化的请求(完整的role/department)
       dispatch('getInitialDataAction', null, { root: true })
       // 2.请求用户信息
+
       const userInfoResult = await requestUserInfoById(id)
+      console.log(userInfoResult)
+
       const userInfo = userInfoResult.data
+
       commit('changeUserInfo', userInfo)
       localCache.setCache('userInfo', userInfo)
 
@@ -70,6 +77,9 @@ const loginStore: Module<ILoginState, IRootState> = {
 
       // 3.请求用户菜单
       const userMenusResult = await requestUserMenusByRoleId(userInfo.role.id)
+
+      console.log(userMenusResult)
+
       const userMenus = userMenusResult.data
       commit('changeUserMenus', userMenus)
       localCache.setCache('userMenus', userMenus)

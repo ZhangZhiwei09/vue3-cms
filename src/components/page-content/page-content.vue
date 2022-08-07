@@ -130,6 +130,7 @@ export default defineComponent({
 }
 .addBtn {
   text-align: right;
+  margin-bottom: 10px;
 }
 .el-image {
   width: 100%;

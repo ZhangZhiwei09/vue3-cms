@@ -11,7 +11,7 @@
         class="login-account"
       >
         <el-form-item label="账号" prop="name">
-          <el-input v-model="account.name" type="password" autocomplete="off" />
+          <el-input v-model="account.name" type="text" autocomplete="off" />
         </el-form-item>
         <el-form-item label="密码" prop="password">
           <el-input v-model="account.password" type="password" autocomplete="off" />
@@ -37,7 +37,7 @@ export default defineComponent({
     const store = useStore()
 
     const account = reactive({
-      name: 'coderwhy',
+      name: 'admin',
       password: '123456'
     })
     const login = () => {

@@ -10,17 +10,17 @@ const menuListData = {
       createAt: '2021-04-19T14:11:02.000Z',
       updateAt: '2021-08-20T06:59:55.000Z',
       children: [
-        {
-          id: 39,
-          url: '/main/analysis/overview',
-          name: '核心技术',
-          sort: 106,
-          type: 2,
-          children: null,
-          createAt: '2021-01-02 18:09:11.000000',
-          parentId: 38,
-          updateAt: '2021-08-19 15:54:41.000000'
-        },
+        // {
+        //   id: 39,
+        //   url: '/main/analysis/overview',
+        //   name: '核心技术',
+        //   sort: 106,
+        //   type: 2,
+        //   children: null,
+        //   createAt: '2021-01-02 18:09:11.000000',
+        //   parentId: 38,
+        //   updateAt: '2021-08-19 15:54:41.000000'
+        // },
         {
           id: 40,
           url: '/main/analysis/dashboard',

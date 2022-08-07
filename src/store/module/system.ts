@@ -67,15 +67,13 @@ const systemStore: Module<ISystemState, IRootState> = {
   },
   actions: {
     async getPageListAction({ commit }, payload: any) {
-      console.log(payload)
-
       // 1.获取pageUrl
       const pageName = payload.pageName
       const pageUrl = `/${pageName}/list`
+      console.log(pageUrl, payload)
 
       // 2.对页面发送请求
       const pageResult = await getPageListData(pageUrl, payload.queryInfo)
-      console.log(pageResult)
 
       const { list, totalCount } = pageResult.data
 

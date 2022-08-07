@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import localCache from '@/utils/cache'
+import { firstMenu } from '@/utils/map-menu'
 import user from '@/views/main/system/user/user.vue'
 import role from '@/views/main/system/role/role.vue'
 import menu from '@/views/main/system/menu/menu.vue'
@@ -18,32 +19,8 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/main',
-    redirect: '/main/system/user',
     name: 'main',
-    component: () => import('@/views/main/main.vue'),
-    children: [
-      {
-        path: '/main/system/user',
-        component: user
-      },
-      {
-        path: '/main/system/role',
-        component: role
-      },
-      {
-        path: '/main/system/menu',
-        component: menu
-      },
-      {
-        path: '/main/product/goods',
-        component: goods
-      },
-      {
-        path: '/main/analysis/dashboard',
-        component: dashboard
-      }
-    ]
-    // children: [] -> 根据userMenus来决定 -> children
+    component: () => import('@/views/main/main.vue')
   },
 
   {
@@ -65,6 +42,10 @@ router.beforeEach((to) => {
     if (!token) {
       return '/login'
     }
+  }
+  if (to.path === '/main') {
+    console.log(firstMenu)
+    return firstMenu.url
   }
 })
 

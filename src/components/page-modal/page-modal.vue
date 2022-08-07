@@ -55,6 +55,8 @@ export default defineComponent({
     const handleConfirmClick = () => {
       dialogFormVisible.value = false
       if (Object.keys(props.editDefaultValue).length) {
+        console.log()
+
         // 编辑
         store.dispatch('systemStore/editPageDataAction', {
           pageName: props.pageName,

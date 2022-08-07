@@ -36,6 +36,7 @@ export default defineComponent({
     const route = useRoute()
     const currentPath = route.path
     const userMenus = computed(() => store.state.loginStore.userMenus)
+    console.log(userMenus.value, currentPath)
 
     const menu = pathMapToMenu(userMenus.value, currentPath)
 

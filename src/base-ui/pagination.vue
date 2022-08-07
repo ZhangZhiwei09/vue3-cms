@@ -31,10 +31,13 @@ export default defineComponent({
   emit: ['update:page'],
   setup(props, { emit }) {
     const handleCurrentChange = (currentPage: number) => {
+      console.log(currentPage)
+
       emit('update:page', { ...props.page, currentPage })
     }
 
     const handleSizeChange = (pageSize: number) => {
+      console.log(pageSize)
       emit('update:page', { ...props.page, pageSize })
     }
     return {
