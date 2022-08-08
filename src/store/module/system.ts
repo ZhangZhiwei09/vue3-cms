@@ -1,12 +1,6 @@
 import { Module } from 'vuex'
 import { IRootState } from '../type/index'
 import { ISystemState } from '../type/system'
-// import {
-//   getPageListData,
-//   deletePageData,
-//   createPageData,
-//   editPageData
-// } from '@/service/main/system/system'
 import {
   getPageListData,
   deletePageData,

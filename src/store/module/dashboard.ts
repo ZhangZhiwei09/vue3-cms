@@ -1,11 +1,4 @@
 import { Module } from 'vuex'
-
-// import {
-//   getCategoryGoodsCount,
-//   getCategoryGoodsSale,
-//   getCategoryGoodsFavor,
-//   getAddressGoodsSale
-// } from '@/service/main/analysis/dashboard'
 import {
   getCategoryGoodsCount,
   getCategoryGoodsSale,

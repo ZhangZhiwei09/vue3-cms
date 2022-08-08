@@ -2,11 +2,6 @@ import { Module } from 'vuex'
 import { ILoginState } from '../type/login'
 import { IRootState } from '../type/index'
 import { mapMenusToRoutes } from '@/utils/map-menu'
-// import {
-//   accountLoginRequest,
-//   requestUserInfoById,
-//   requestUserMenusByRoleId
-// } from '@/service/login/login'
 import {
   accountLoginRequest,
   requestUserInfoById,
@@ -34,19 +29,12 @@ const loginStore: Module<ILoginState, IRootState> = {
     },
     changeUserMenus(state, userMenus: any) {
       state.userMenus = userMenus
-
-      // console.log('注册动态路由')
-
-      console.log(userMenus)
-
-      // userMenus => routes
       const routes = mapMenusToRoutes(userMenus)
 
       // 将routes => router.main.children
       routes.forEach((route) => {
         router.addRoute('main', route)
       })
-
       // 获取用户按钮的权限
       // const permissions = mapMenusToPermissions(userMenus)
       // state.permissions = permissions

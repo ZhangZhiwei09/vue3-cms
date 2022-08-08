@@ -1,4 +1,8 @@
-import { menuMapLeafKeys } from '@/utils/map-menu'
+/*
+  rolelistData    系统管理-角色管理
+  adminMenus      登录时渲染管理员菜单
+  testMenus       登录时渲染测试员菜单
+ */
 const rolelistData = {
   list: [
     {
@@ -441,52 +445,52 @@ const rolelistData = {
           icon: 'el-icon-goods',
           sort: 3,
           children: [
-            {
-              id: 15,
-              url: '/main/product/category',
-              name: '商品类别',
-              sort: 104,
-              type: 2,
-              children: [
-                {
-                  id: 30,
-                  url: null,
-                  name: '创建类别',
-                  sort: null,
-                  type: 3,
-                  parentId: 15,
-                  permission: 'system:category:create'
-                },
-                {
-                  id: 31,
-                  url: null,
-                  name: '删除类别',
-                  sort: null,
-                  type: 3,
-                  parentId: 15,
-                  permission: 'system:category:delete'
-                },
-                {
-                  id: 32,
-                  url: null,
-                  name: '修改类别',
-                  sort: null,
-                  type: 3,
-                  parentId: 15,
-                  permission: 'system:category:update'
-                },
-                {
-                  id: 33,
-                  url: null,
-                  name: '查询类别',
-                  sort: null,
-                  type: 3,
-                  parentId: 15,
-                  permission: 'system:category:query'
-                }
-              ],
-              parentId: 9
-            },
+            // {
+            //   id: 15,
+            //   url: '/main/product/category',
+            //   name: '商品类别',
+            //   sort: 104,
+            //   type: 2,
+            //   children: [
+            //     {
+            //       id: 30,
+            //       url: null,
+            //       name: '创建类别',
+            //       sort: null,
+            //       type: 3,
+            //       parentId: 15,
+            //       permission: 'system:category:create'
+            //     },
+            //     {
+            //       id: 31,
+            //       url: null,
+            //       name: '删除类别',
+            //       sort: null,
+            //       type: 3,
+            //       parentId: 15,
+            //       permission: 'system:category:delete'
+            //     },
+            //     {
+            //       id: 32,
+            //       url: null,
+            //       name: '修改类别',
+            //       sort: null,
+            //       type: 3,
+            //       parentId: 15,
+            //       permission: 'system:category:update'
+            //     },
+            //     {
+            //       id: 33,
+            //       url: null,
+            //       name: '查询类别',
+            //       sort: null,
+            //       type: 3,
+            //       parentId: 15,
+            //       permission: 'system:category:query'
+            //     }
+            //   ],
+            //   parentId: 9
+            // },
             {
               id: 16,
               url: '/main/product/goods',
@@ -820,52 +824,52 @@ const rolelistData = {
           icon: 'el-icon-goods',
           sort: 3,
           children: [
-            {
-              id: 15,
-              url: '/main/product/category',
-              name: '商品类别',
-              sort: 104,
-              type: 2,
-              children: [
-                {
-                  id: 30,
-                  url: null,
-                  name: '创建类别',
-                  sort: null,
-                  type: 3,
-                  parentId: 15,
-                  permission: 'system:category:create'
-                },
-                {
-                  id: 31,
-                  url: null,
-                  name: '删除类别',
-                  sort: null,
-                  type: 3,
-                  parentId: 15,
-                  permission: 'system:category:delete'
-                },
-                {
-                  id: 32,
-                  url: null,
-                  name: '修改类别',
-                  sort: null,
-                  type: 3,
-                  parentId: 15,
-                  permission: 'system:category:update'
-                },
-                {
-                  id: 33,
-                  url: null,
-                  name: '查询类别',
-                  sort: null,
-                  type: 3,
-                  parentId: 15,
-                  permission: 'system:category:query'
-                }
-              ],
-              parentId: 9
-            },
+            // {
+            //   id: 15,
+            //   url: '/main/product/category',
+            //   name: '商品类别',
+            //   sort: 104,
+            //   type: 2,
+            //   children: [
+            //     {
+            //       id: 30,
+            //       url: null,
+            //       name: '创建类别',
+            //       sort: null,
+            //       type: 3,
+            //       parentId: 15,
+            //       permission: 'system:category:create'
+            //     },
+            //     {
+            //       id: 31,
+            //       url: null,
+            //       name: '删除类别',
+            //       sort: null,
+            //       type: 3,
+            //       parentId: 15,
+            //       permission: 'system:category:delete'
+            //     },
+            //     {
+            //       id: 32,
+            //       url: null,
+            //       name: '修改类别',
+            //       sort: null,
+            //       type: 3,
+            //       parentId: 15,
+            //       permission: 'system:category:update'
+            //     },
+            //     {
+            //       id: 33,
+            //       url: null,
+            //       name: '查询类别',
+            //       sort: null,
+            //       type: 3,
+            //       parentId: 15,
+            //       permission: 'system:category:query'
+            //     }
+            //   ],
+            //   parentId: 9
+            // },
             {
               id: 16,
               url: '/main/product/goods',
@@ -1181,52 +1185,52 @@ const rolelistData = {
           icon: 'el-icon-goods',
           sort: 3,
           children: [
-            {
-              id: 15,
-              url: '/main/product/category',
-              name: '商品类别',
-              sort: 104,
-              type: 2,
-              children: [
-                {
-                  id: 30,
-                  url: null,
-                  name: '创建类别',
-                  sort: null,
-                  type: 3,
-                  parentId: 15,
-                  permission: 'system:category:create'
-                },
-                {
-                  id: 31,
-                  url: null,
-                  name: '删除类别',
-                  sort: null,
-                  type: 3,
-                  parentId: 15,
-                  permission: 'system:category:delete'
-                },
-                {
-                  id: 32,
-                  url: null,
-                  name: '修改类别',
-                  sort: null,
-                  type: 3,
-                  parentId: 15,
-                  permission: 'system:category:update'
-                },
-                {
-                  id: 33,
-                  url: null,
-                  name: '查询类别',
-                  sort: null,
-                  type: 3,
-                  parentId: 15,
-                  permission: 'system:category:query'
-                }
-              ],
-              parentId: 9
-            },
+            // {
+            //   id: 15,
+            //   url: '/main/product/category',
+            //   name: '商品类别',
+            //   sort: 104,
+            //   type: 2,
+            //   children: [
+            //     {
+            //       id: 30,
+            //       url: null,
+            //       name: '创建类别',
+            //       sort: null,
+            //       type: 3,
+            //       parentId: 15,
+            //       permission: 'system:category:create'
+            //     },
+            //     {
+            //       id: 31,
+            //       url: null,
+            //       name: '删除类别',
+            //       sort: null,
+            //       type: 3,
+            //       parentId: 15,
+            //       permission: 'system:category:delete'
+            //     },
+            //     {
+            //       id: 32,
+            //       url: null,
+            //       name: '修改类别',
+            //       sort: null,
+            //       type: 3,
+            //       parentId: 15,
+            //       permission: 'system:category:update'
+            //     },
+            //     {
+            //       id: 33,
+            //       url: null,
+            //       name: '查询类别',
+            //       sort: null,
+            //       type: 3,
+            //       parentId: 15,
+            //       permission: 'system:category:query'
+            //     }
+            //   ],
+            //   parentId: 9
+            // },
             {
               id: 16,
               url: '/main/product/goods',
@@ -1530,52 +1534,52 @@ const adminMenus = [
     icon: 'el-icon-goods',
     sort: 3,
     children: [
-      {
-        id: 15,
-        url: '/main/product/category',
-        name: '商品类别',
-        sort: 104,
-        type: 2,
-        children: [
-          {
-            id: 30,
-            url: null,
-            name: '创建类别',
-            sort: null,
-            type: 3,
-            parentId: 15,
-            permission: 'system:category:create'
-          },
-          {
-            id: 31,
-            url: null,
-            name: '删除类别',
-            sort: null,
-            type: 3,
-            parentId: 15,
-            permission: 'system:category:delete'
-          },
-          {
-            id: 32,
-            url: null,
-            name: '修改类别',
-            sort: null,
-            type: 3,
-            parentId: 15,
-            permission: 'system:category:update'
-          },
-          {
-            id: 33,
-            url: null,
-            name: '查询类别',
-            sort: null,
-            type: 3,
-            parentId: 15,
-            permission: 'system:category:query'
-          }
-        ],
-        parentId: 9
-      },
+      // {
+      //   id: 15,
+      //   url: '/main/product/category',
+      //   name: '商品类别',
+      //   sort: 104,
+      //   type: 2,
+      //   children: [
+      //     {
+      //       id: 30,
+      //       url: null,
+      //       name: '创建类别',
+      //       sort: null,
+      //       type: 3,
+      //       parentId: 15,
+      //       permission: 'system:category:create'
+      //     },
+      //     {
+      //       id: 31,
+      //       url: null,
+      //       name: '删除类别',
+      //       sort: null,
+      //       type: 3,
+      //       parentId: 15,
+      //       permission: 'system:category:delete'
+      //     },
+      //     {
+      //       id: 32,
+      //       url: null,
+      //       name: '修改类别',
+      //       sort: null,
+      //       type: 3,
+      //       parentId: 15,
+      //       permission: 'system:category:update'
+      //     },
+      //     {
+      //       id: 33,
+      //       url: null,
+      //       name: '查询类别',
+      //       sort: null,
+      //       type: 3,
+      //       parentId: 15,
+      //       permission: 'system:category:query'
+      //     }
+      //   ],
+      //   parentId: 9
+      // },
       {
         id: 16,
         url: '/main/product/goods',
@@ -1681,7 +1685,7 @@ export default [
     type: 'post',
     response: () => {
       return {
-        code: 0,
+        code: 200,
         data: rolelistData
       }
     }
@@ -1709,19 +1713,12 @@ export default [
   {
     url: '/mock/role',
     type: 'patch',
-    response: ({ body }: any) => {
-      // "editData":{"name":"test","intro":"test"},"id":5748}
-      // const { id, editData } = JSON.parse(body)
-      // const roleResult = rolelistData.list.filter((e) => e.id === id)
-
-      // console.log(roleResult)
-      // console.log(editData)
-
+    response: () => {
       return {
         code: 200,
         message: '更新成功',
         data: {
-          name: 'testName'
+          name: '更新成功'
         }
       }
     }

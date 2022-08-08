@@ -4,7 +4,7 @@ export default [
     type: 'post',
     response: () => {
       return {
-        code: 0,
+        code: 200,
         data: {
           list: [
             {

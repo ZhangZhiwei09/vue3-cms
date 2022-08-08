@@ -1,3 +1,6 @@
+/* User账号
+   usersListData用户列表
+*/
 const Users = {
   list: [
     {
@@ -166,34 +169,13 @@ const usersListData = {
   ],
   totalCount: 10
 }
-const userdata = {
-  id: 1,
-  name: 'coderwhy',
-  realname: 'coderwhy',
-  cellphone: 18812345678,
-  enable: 1,
-  createAt: '2021-01-02T10:20:26.000Z',
-  updateAt: '2021-01-03T04:50:13.000Z',
-  role: {
-    id: 1,
-    name: '超级管理员',
-    intro: '所有权限',
-    createAt: '2021-01-02T10:01:52.000Z',
-    updateAt: '2021-01-02T10:01:52.000Z'
-  },
-  department: {
-    id: 1,
-    name: '总裁办',
-    parentId: null,
-    createAt: '2021-01-02T10:03:09.000Z',
-    updateAt: '2021-01-05T08:25:46.000Z',
-    leader: 'coderwhy'
-  }
-}
+
 export default [
-  //查询用户      /users/id  get
-  //创建用户      /users      post
-  //查询用户列表  /users/list  post查询 delete删除 patch编辑
+  /*
+  查询用户      /users/id    get
+  创建用户      /users       post
+  查询用户列表  /users/list   post查询 delete删除 patch编辑
+  */
   {
     url: '/mock/users',
     type: 'get',
@@ -208,7 +190,6 @@ export default [
       }
     }
   },
-
   {
     url: '/mock/users/list',
     type: 'post',
@@ -268,7 +249,7 @@ export default [
         usersListData.list[index][item] = editData[item]
       }
       return {
-        code: 0,
+        code: 200,
         data: usersListData
       }
     }

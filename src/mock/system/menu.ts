@@ -280,62 +280,62 @@ const menuListData = {
       createAt: '2021-01-05T12:15:56.000Z',
       updateAt: '2021-08-20T07:00:25.000Z',
       children: [
-        {
-          id: 15,
-          url: '/main/product/category',
-          name: '商品类别',
-          sort: 104,
-          type: 2,
-          children: [
-            {
-              id: 30,
-              url: null,
-              name: '创建类别',
-              sort: null,
-              type: 3,
-              createAt: '2021-01-03 13:41:01.000000',
-              parentId: 15,
-              updateAt: '2021-04-19 21:59:39.000000',
-              permission: 'system:category:create'
-            },
-            {
-              id: 31,
-              url: null,
-              name: '删除类别',
-              sort: null,
-              type: 3,
-              createAt: '2021-01-03 13:41:01.000000',
-              parentId: 15,
-              updateAt: '2021-04-19 21:59:44.000000',
-              permission: 'system:category:delete'
-            },
-            {
-              id: 32,
-              url: null,
-              name: '修改类别',
-              sort: null,
-              type: 3,
-              createAt: '2021-01-03 13:41:01.000000',
-              parentId: 15,
-              updateAt: '2021-04-19 21:59:47.000000',
-              permission: 'system:category:update'
-            },
-            {
-              id: 33,
-              url: null,
-              name: '查询类别',
-              sort: null,
-              type: 3,
-              createAt: '2021-01-03 13:41:01.000000',
-              parentId: 15,
-              updateAt: '2021-04-19 21:59:49.000000',
-              permission: 'system:category:query'
-            }
-          ],
-          createAt: '2021-04-19 21:55:11.000000',
-          parentId: 9,
-          updateAt: '2021-08-19 15:52:12.000000'
-        },
+        // {
+        //   id: 15,
+        //   url: '/main/product/category',
+        //   name: '商品类别',
+        //   sort: 104,
+        //   type: 2,
+        //   children: [
+        //     {
+        //       id: 30,
+        //       url: null,
+        //       name: '创建类别',
+        //       sort: null,
+        //       type: 3,
+        //       createAt: '2021-01-03 13:41:01.000000',
+        //       parentId: 15,
+        //       updateAt: '2021-04-19 21:59:39.000000',
+        //       permission: 'system:category:create'
+        //     },
+        //     {
+        //       id: 31,
+        //       url: null,
+        //       name: '删除类别',
+        //       sort: null,
+        //       type: 3,
+        //       createAt: '2021-01-03 13:41:01.000000',
+        //       parentId: 15,
+        //       updateAt: '2021-04-19 21:59:44.000000',
+        //       permission: 'system:category:delete'
+        //     },
+        //     {
+        //       id: 32,
+        //       url: null,
+        //       name: '修改类别',
+        //       sort: null,
+        //       type: 3,
+        //       createAt: '2021-01-03 13:41:01.000000',
+        //       parentId: 15,
+        //       updateAt: '2021-04-19 21:59:47.000000',
+        //       permission: 'system:category:update'
+        //     },
+        //     {
+        //       id: 33,
+        //       url: null,
+        //       name: '查询类别',
+        //       sort: null,
+        //       type: 3,
+        //       createAt: '2021-01-03 13:41:01.000000',
+        //       parentId: 15,
+        //       updateAt: '2021-04-19 21:59:49.000000',
+        //       permission: 'system:category:query'
+        //     }
+        //   ],
+        //   createAt: '2021-04-19 21:55:11.000000',
+        //   parentId: 9,
+        //   updateAt: '2021-08-19 15:52:12.000000'
+        // },
         {
           id: 16,
           url: '/main/product/goods',
@@ -491,7 +491,6 @@ export default [
     type: 'delete',
     response: ({ body }: any) => {
       const menuId = body
-      console.log(body)
       menuListData.list.forEach((item, index) => {
         if (item.id === menuId) {
           menuListData.list.splice(index, 1)

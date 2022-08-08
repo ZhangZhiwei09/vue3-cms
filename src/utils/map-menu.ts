@@ -1,13 +1,15 @@
 import { RouteRecordRaw } from 'vue-router'
-let firstMenu: any = null
+let firstMenu: any = null //加载的第一个页面
 interface IBreadcrumb {
   name: string
   path?: string
 }
 export function mapMenusToRoutes(userMenus: any[]): RouteRecordRaw[] {
   const routes: RouteRecordRaw[] = []
-  const allRoutes: RouteRecordRaw[] = []
+  const allRoutes: RouteRecordRaw[] = [] //先加载所有的菜单
   const routeFiles = require.context('../router/main', true, /\.ts/)
+  console.log(routeFiles.keys)
+
   routeFiles.keys().forEach((key) => {
     const route = require('../router/main' + key.split('.')[1])
     allRoutes.push(route.default)
@@ -26,8 +28,6 @@ export function mapMenusToRoutes(userMenus: any[]): RouteRecordRaw[] {
     }
   }
   _recurseGetRoute(userMenus)
-  console.log(routes)
-
   return routes
 }
 export function pathMapToMenu(
