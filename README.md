@@ -44,7 +44,7 @@ export function setupStore() {
     }
 ```
 
-## 双向绑定:为避免单向数据流，不应该更改父组件传递过来的数据，而是子组件传递信息给父组件，让父组件修改数据
+## 双向绑定:避免单向数据流，不应该更改父组件传递过来的数据，而是子组件传递信息给父组件，让父组件修改数据
 
 ```js
 const formData = ref({ ...props.modelValue }) //将传递过来的数据浅拷贝一份，而不是直接修改传递过来的数据
@@ -134,7 +134,7 @@ export default defineComponent({
   }
 })
 </script>
- 
+
 ```
 
 ## props 接受列表数据循环时，循环的 item 显示对象的类型为 unknown
@@ -150,4 +150,46 @@ interface IPropList {
   slotName?: string
 }
 propList: { type: Array as PropType<IPropList[]>, required: true }
+```
+
+## 动态添加路由
+
+通过 require.context()遍历包含所有路由映射关系的文件夹，设置为 true 为递归遍历，routeFiles.keys()就返回一个被处理的请求的数组，再遍历将所有的映射关系存在到总路由数组（allRoutes），接下来通过递归的方式将接口传入的路由地址与总路由数组一一比较，包含在内在添加入需要展示的路由数组（routes)，在通过 addRoute 添加
+
+```js
+import { RouteRecordRaw } from 'vue-router'
+export function mapMenusToRoutes(userMenus: any[]): RouteRecordRaw[] {
+  const routes: RouteRecordRaw[] = [] //需要展示的路由数组
+  const allRoutes: RouteRecordRaw[] = [] //全部数组关系
+  const routeFiles = require.context('../router/main', true, /\.ts/)
+  routeFiles.keys().forEach((key) => {
+    const route = require('../router/main' + key.split('.')[1])
+    allRoutes.push(route.default)
+  })
+  const _recurseGetRoute = (menus: any[]) => {
+    for (const menu of menus) {
+      if (menu.type === 2) {
+        const route = allRoutes.find((route) => route.path === menu.url)
+        if (route) routes.push(route)
+        if (!firstMenu) {
+          firstMenu = menu
+        }
+      } else {
+        _recurseGetRoute(menu.children)
+      }
+    }
+  }
+  _recurseGetRoute(userMenus)
+  return routes
+}
+```
+
+```js
+import router from '@/router'
+
+const routes = mapMenusToRoutes(userMenus)
+
+routes.forEach((route) => {
+  router.addRoute('main', route)
+})
 ```
