@@ -135,22 +135,6 @@ export default defineComponent({
 })
 </script>
 
-```
-
-## props 接受列表数据循环时，循环的 item 显示对象的类型为 unknown
-
-解决方法：因为 Array 中可以放任何数据类型，所以要告知数据中各子项的数据类型
-
-```js
-import { defineComponent, PropType } from 'vue'
-interface IPropList {
-  label: string
-  minWidth: string | number
-  prop: string
-  slotName?: string
-}
-propList: { type: Array as PropType<IPropList[]>, required: true }
-```
 
 ## 动态添加路由
 
